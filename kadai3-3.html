@@ -11,12 +11,10 @@
             members["A002"] = "井上花子";
             members["J001"] = "情報次郎";
             members["J002"] = "設計士郎";
-
-            console.log(members["A001"]);
-            console.log(members["A002"]);
-            console.log(members["J001"]);
-            console.log(members["J002"]);
             // ここに一覧を表示する処理を書く
+            for(let NO in members){
+                console.log(NO + ": " + members[NO]);
+            }
         </script>
     </body>
 </html>
