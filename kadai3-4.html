@@ -23,6 +23,7 @@
                 console.log("商品は以下の" + items.length + "種類です。");
 
                 // 配列の内容を項目毎に出力
+                console.log(items);
                 // ここにコードを書く
                 console.log(""); // 空行の出力
             }
@@ -30,6 +31,20 @@
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
+                const buy = items
+                    .filter(item => item.id == no)
+                    .map(item => item.name)
+                console.log("商品番号："+ no + " 商品名：" + buy +"を購入します。");
+
+                items.find(member => {
+                    if(member.id == no){
+                        if(member.stock > 0){
+                         member.stock = 0}
+                        }else{
+                        console.log("在庫がありません");
+                    }
+                });
+
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
@@ -42,6 +57,7 @@
         </script>
     </body>
 </html>
+
 <!-- 
 期待される出力例
 -----------------
